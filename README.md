@@ -1,1 +1,0 @@
-I Am Just Trying to figure things out man. I still don't know what is going on!

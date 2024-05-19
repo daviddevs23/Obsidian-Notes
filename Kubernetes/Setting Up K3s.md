@@ -11,4 +11,5 @@ sudo usermod -aG sudo david
 ```
 to add the david user to the sudo group. Once you log into the machines, make sure they are updated.
 
-## 2. Setting up the database servers
+## 2. Setting Up The Database Servers
+## 3. Setting Up The Load Balancer

@@ -13,3 +13,5 @@ to add the david user to the sudo group. Once you log into the machines, make su
 
 ## 2. Setting Up The Database Servers
 ## 3. Setting Up The Load Balancer
+
+

@@ -1,0 +1,1 @@
+You can just include "#include <bits/stdc++.h>" to include the whole standard library instead of including everything one at a time (vectors, sets, iostream).

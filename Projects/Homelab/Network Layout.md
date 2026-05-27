@@ -30,30 +30,56 @@ Networks:
 | ------ | ---- | ------------------ |
 | 1      | 30   | Uplink to Firewall |
 | 2      | 20   | devStation         |
-| 3      |      | disabled           |
-| 4      |      | disabled           |
-| 5      |      | disabled           |
-| 6      |      | disabled           |
-| 7      |      | disabled           |
-| 8      |      | disabled           |
-| 9      |      | disabled           |
-| 10     |      | disabled           |
-| 11     |      | disabled           |
-| 12     |      | disabled           |
-| 13     |      | disabled           |
-| 14     |      | disabled           |
-| 15     |      | disabled           |
-| 16     |      | disabled           |
-| 17     |      | disabled           |
-| 18     |      | disabled           |
-| 19     |      | disabled           |
-| 20     |      | disabled           |
-| 21     |      | disabled           |
-| 22     |      | disabled           |
-| 23     |      | disabled           |
+| 3      | 1    | disabled           |
+| 4      | 1    | disabled           |
+| 5      | 1    | disabled           |
+| 6      | 1    | disabled           |
+| 7      | 1    | disabled           |
+| 8      | 1    | disabled           |
+| 9      | 1    | disabled           |
+| 10     | 1    | disabled           |
+| 11     | 1    | disabled           |
+| 12     | 1    | disabled           |
+| 13     | 1    | disabled           |
+| 14     | 1    | disabled           |
+| 15     | 1    | disabled           |
+| 16     | 1    | disabled           |
+| 17     | 1    | disabled           |
+| 18     | 1    | disabled           |
+| 19     | 1    | disabled           |
+| 20     | 1    | disabled           |
+| 21     | 1    | disabled           |
+| 22     | 1    | disabled           |
+| 23     | 1    | disabled           |
 | 24     | 10   | deco               |
 ## OPNSense VLAN Setup
+Create the VLAN:
+1. Go to Interfaces -> Devices -> VLAN
+2. Select the orange plus "Add" button on the far right
+3. Select a parent (usually lan), vlan tag (10, 20, 30, etc), and give it a description.
+4. Hit Save and then hit Apply
 
+Assign the VLAN:
+1. Go to Interfaces -> Assignments
+2. Go to the bottom section and select the device from the drop down menu. It will be called something along the lines of "vlan01 Guest Network"
+3. Hit the Add button
+
+Activate the VLAN:
+1. Go to Interfaces -> [NameOfVlan]
+2. Select the enable option
+3. Unter IPv4 Configuration Type, select "Static IPv4"
+4. Go down to Static IPv4 Configuration and give it an IP and subnet. Example for VLAN 10 is IP 10.10.0.1/24
+5. Hit the save button
+6. Hit apply changes at the top of the screen
+
+Create Default Allow Firewall Rule:
+1. Go to Firewall -> Rules -> [NameOfVlan]
+2. Select the orange plus "Add" button
+3. Change nothing and scroll down to the bottom and hit Save
+4. Hit Apply Changes at the top
+
+Set Up DHCP Server:
+1. Set up all your VLANs before you set up the KEA DHCP service
 
 ## Mikrotik Setup
 1. Go to the system tab and enable "Independent VLAN Lookup"

@@ -80,7 +80,20 @@ Create Default Allow Firewall Rule:
 
 Set Up DHCP Server:
 1. Set up all your VLANs before you set up the KEA DHCP service
-
+2. Go to Services -> Kea DHCP -> Kea DHCPv4
+3. Check the enable check box and select all interfaces you want kea on (everything but WAN).
+4. Hit save and apply
+5. Go to the subnets and select the red plus "Add" button.
+6. Fill in the following data (example for vlan 10)
+	- Subnet: 10.10.0.0/24
+	- Description: Guest Network
+	- Pools (range of IPs Kea will assign): 10.10.0.100-10.10.0.254
+	- Uncheck "Auto Collect Option Data"
+	- Routers (gateway): 10.10.0.1
+	- DNS Servers: 1.1.1.1 8.8.8.8
+7. Hit save
+8. Add the subnets for other vlans
+9. Hit apply
 ## Mikrotik Setup
 1. Go to the system tab and enable "Independent VLAN Lookup"
 2. Go to VLANs and create an entry for each vlan. You will have to give it an id (number), a name, check "Port Isolation" and "Learning". Then, for every port that should have access to that vlan, check the associated box. For a note, the trunk port should have access to each vlan.

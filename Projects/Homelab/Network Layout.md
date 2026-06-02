@@ -97,8 +97,10 @@ Set Up DHCP Server:
 ## Mikrotik Setup
 1. Go to the system tab and enable "Independent VLAN Lookup"
 2. Go to VLANs and create an entry for each vlan. You will have to give it an id (number), a name, check "Port Isolation" and "Learning". Then, for every port that should have access to that vlan, check the associated box. For a note, the trunk port should have access to each vlan.
-3. Go to VLAN and mark ever port as disabled.
-4. Then on the ports you want to use, set the VLAN mode to optional, VLAN receive to any, give it a default vlan id (the vlan it will use), and leave force vlan id unchecked.
+3. Go to VLAN and mark every unused port as disabled.
+4. In the VLAN tab still, set up the following ports:
+	- Trunk: Vlan Mode: strict, VLAN Receive: only tagged, Default VLAN ID: 30 (servers)
+	- Every other Port: Vlan Mode: enabled, VLAN Receive: only untagged, Default VLAN ID: 10 (or whatever), check Force VLAN ID
 
 Here is some addition information:
 https://help.mikrotik.com/docs/spaces/SWOS/pages/76415036/CRS3xx+and+CSS3xx+series+Manual#CRS3xxandCSS3xxseriesManual-VLANandVLANs

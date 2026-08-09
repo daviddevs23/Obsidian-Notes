@@ -31,7 +31,7 @@ Networks:
 | 1      | 30   | Uplink to Firewall |
 | 2      | 20   | devStation         |
 | 3      | 1    | disabled           |
-| 4      | 1    | disabled           |
+| 4      | 20   | PLC Bench          |
 | 5      | 1    | disabled           |
 | 6      | 1    | disabled           |
 | 7      | 1    | disabled           |
